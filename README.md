@@ -1,7 +1,7 @@
 # An example of a Depaton code style guide
 ***
 ## 어쨰서 코드 스타일이 필요한가
-***
+
 **"규모가 큰 게임은 혼자서 개발할 수 없다"**
 
 많은 개발자들이 알고 있을 보편적인 사실이라고 생각한다
@@ -14,7 +14,7 @@
 ## 형식 지정 규칙
 C#에는 두 가지 일반적인 들여쓰기 스타일이 있습니다.
 
-하나는 여는 중괄호를 새 라인에 배치하는 Allman 스타일이고 다른 하나는 여는 중괄호를 이전 헤더와 같은 라인에 배치하는 K&R 스타일 또는 'OTB(One True Brace) 스타일'입니다.
+하나는 여는 중괄호를 새 라인에 배치하는 Allman 스타일이고 다른 하나는 여는 중괄호를 이전 헤더와 같은 라인에 배치하는 K&R 스타일 또는 OTB(One True Brace) 스타일'입니다.
 
 **예시(Allman)**
 ```
@@ -23,6 +23,36 @@ void InventoryMouseCursor(bool ShowInventory)
     if (!ShowInventory)
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false
     }
 }
 ```
+**예시(K&R)**
+```
+void InventoryMouseCursor(bool ShowInventory){
+    if (!ShowInventory){
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false
+    }
+}
+```
+**Depaton Studio에서는 가독성을 위하여 Allman 스타일을 채택했습니다.**
+
+
+또한 중첨 if or 중첩 for문에 경우에도 조금더 명확한 표현을 위해서 필수적으로 중괄호를 적용해주세요.
+
+
+**예시**
+```
+    if (isDie == true)
+    {
+        if(score < 10)
+        {
+            gameOver();
+        }
+    }
+```
+***
+## 가독성 개선
+
+
